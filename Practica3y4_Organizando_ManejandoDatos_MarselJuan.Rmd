@@ -309,7 +309,7 @@ Vamos a cargar el conjunto de datos `VuelosNY.Rdata` que contiene dos data frame
 
 library(dplyr)
 #library(dbplyr)
-rm(list=ls())
+#rm(list=ls())
 load("./data/VuelosNY.Rdata")
 ```
 
