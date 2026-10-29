@@ -227,8 +227,8 @@ Obtén la versión *tidy* de este conjunto de datos usando `pivot_longer`.
 Consejo: puedes eliminar el prefijo `wk` de las semanas mediante el argumento `names_prefix`. Opcionalmente puedes crear una columna `date` a partir de `date.entered`, sumando las semanas transcurridas desde la fecha de entrada en lista.
 
 ```{r}
-raw.tidy <- raw %>% pivot_longer(names_to = "week", values_to = "rank", names_prefix = "wk",cols=6:81)
-head(raw.tidy)
+billboard.tidy <- raw %>% pivot_longer(names_to = "week", values_to = "rank", names_prefix = "wk",cols=6:81,values_drop_na = T)
+head(billboard.tidy)
 ```
 
 ## Varias variables en una misma columna
@@ -249,7 +249,7 @@ Para pasar a formato *tidy* necesitamos realizar dos operaciones en este caso. E
 Convierte el conjunto de datos TB en *tidy* utilizando `gather` y `separate`.
 
 ```{r}
-
+TB.tidy <- raw %>% gather(key = "sexo_rango", value = "casos",-country,-year) %>%
 ```
 
 ## Variables almacenadas tanto en filas como en columnas
