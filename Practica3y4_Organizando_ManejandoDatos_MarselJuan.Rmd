@@ -331,8 +331,9 @@ En nuestro estudio queremos aplicar una serie de criterios de exclusión sobre l
 - Nota: Revisar el uso de la función filter vista en clase y tener en cuenta los operadores de comparación: igual ==, distinto !=, mayor \>, mayor o igual \>=, menor \<, menor o igual \<=.
 
 ```{r }
-
-
+planes.f <- planes %>% filter(!grepl("MCDONELL DOUGLAS",manufacturer)) %>% filter(seats <=210,seats >= 90) 
+planes.f[grepl("AIRBUS",planes.f$manufacturer),"manufacturer"] <- "AIRBUS COMP"
+head(planes.f)
 
 ```
 
